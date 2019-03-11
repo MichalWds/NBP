@@ -11,7 +11,26 @@ import java.util.List;
 public class CurrencyModel {
 
     private List<ExchangeRate> rates = new ArrayList<>();
+private Double gold;
 
+    public Double getGold() {
+        return gold;
+    }
+
+    @Override
+    public String toString() {
+        return "CurrencyModel{" +
+                "gold=" + gold +
+                '}';
+    }
+
+    public void setGold(Double gold) {
+        this.gold = gold;
+    }
+
+    public CurrencyModel(Double gold) {
+        this.gold = gold;
+    }
 
     public List<ExchangeRate> getRates() {
 
@@ -31,7 +50,27 @@ public class CurrencyModel {
 
         private Double bid;
 
+        public void setGold(Double gold) {
+            this.gold = gold;
+        }
+
+        @Override
+        public String toString() {
+            return "ExchangeRate{" +
+                    "gold=" + gold +
+                    '}';
+        }
+
         private Double ask;
+        private Double gold;
+
+        public ExchangeRate(Double gold) {
+            this.gold = gold;
+        }
+
+        public Double getGold() {
+            return gold;
+        }
 
 
         public Double getBid() {
@@ -55,19 +94,6 @@ public class CurrencyModel {
         public void setAsk(Double ask) {
 
             this.ask = ask;
-        }
-
-        @Override
-
-        public String toString() {
-
-            return "ExchangeRate{" +
-
-                    "bid=" + bid +
-
-                    ", ask=" + ask +
-
-                    '}';
         }
 
     }
